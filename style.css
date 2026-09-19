@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  font-family: Arial, sans-serif;
+
+  background-color: #f4f6f8;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+
+  padding: 35px;
+
+  background-color: white;
+
+  border-radius: 12px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-bottom: 25px;
+
+  text-align: center;
+
+  font-size: 24px;
+
+  color: #222;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  width: 100%;
+
+  padding: 14px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  outline: none;
+}
+
+input:focus {
+  border-color: #2563eb;
+}
+
+button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #2563eb;
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+#error {
+  display: none;
+
+  margin-top: 20px;
+
+  text-align: center;
+
+  color: #dc2626;
+
+  font-weight: bold;
+
+  line-height: 1.5;
+}
+
+/* Efecto de página rota */
+
+body.broken {
+  background-color: #000;
+}
+
+body.broken .container {
+  transform: rotate(-2deg) skewX(5deg);
+  filter: blur(1px);
+
+  background-color: #111;
+  color: #ff0000;
+
+  box-shadow: none;
+
+  animation: shake 0.1s infinite;
+}
+
+body.broken h1 {
+  color: #ff0000;
+}
+
+body.broken input {
+  background-color: #222;
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+body.broken button {
+  background-color: #ff0000;
+}
+
+body.broken #error {
+  display: block;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(2px, 2px) rotate(-2deg);
+  }
+
+  25% {
+    transform: translate(-2px, -2px) rotate(2deg);
+  }
+
+  50% {
+    transform: translate(2px, -2px) rotate(-1deg);
+  }
+
+  75% {
+    transform: translate(-2px, 2px) rotate(1deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(-2deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 21px;
+  }
+}
