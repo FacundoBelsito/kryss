@@ -1,45 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Ingresar código</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <main class="container" id="container">
 
-    <h1>INTRODUCI EL CODIGO</h1>
+    <div class="candado" aria-hidden="true">🔒</div>
 
-    <form id="codeForm">
+    <h1>INTRODUCÍ EL CÓDIGO</h1>
 
+    <form id="codeForm" novalidate>
+      <label for="codigo" class="sr-only">Código</label>
       <input
-        type="text"
+        type="password"
         id="codigo"
         placeholder="Código"
+        inputmode="numeric"
         autocomplete="off"
+        maxlength="20"
         required
       >
-
-      <button type="submit">
-        Continuar
-      </button>
-
+      <button type="submit">Continuar</button>
     </form>
 
-    <p id="error"></p>
+    <p id="error" role="alert" aria-live="assertive"></p>
 
   </main>
 
   <script src="script.js"></script>
-
 </body>
 </html>
-
-
-
